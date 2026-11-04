@@ -1,6 +1,6 @@
 # Vavoo Stream – Android
 
-**Android app by Qu4k3** · ![version](https://img.shields.io/badge/version-1.3.2-8b3fd9) ![Android](https://img.shields.io/badge/Android-5.0%2B-3fdc8e) ![TV](https://img.shields.io/badge/Android%20TV-ready-5a8cff)
+**Android app by Qu4k3** · ![version](https://img.shields.io/badge/version-1.3.4-8b3fd9) ![Android](https://img.shields.io/badge/Android-5.0%2B-3fdc8e) ![TV](https://img.shields.io/badge/Android%20TV-ready-5a8cff)
 
 Live TV from Vavoo / Kool.to on your Android **phone, tablet and Android TV box** – a
 complete TV app: preview window, programme guide, recordings, pause live TV, multi-view,
@@ -18,9 +18,28 @@ The app checks for new versions and offers the update itself (Settings → Check
 You can also follow releases automatically with [Obtainium](https://github.com/ImranR98/Obtainium):
 add `https://github.com/pQu4k3r/vavoo_android-releases`.
 
+## How it works
+
+- **Channels** – the app reads the Vavoo catalog (all countries, with their groups). A channel that exists
+  several times (`.b`, `.c`, `.s`, HD, HEVC, RAW, backup…) is shown as **one row**; when one source
+  fails the next one is tried by itself.
+- **Token** – Vavoo gives one stream per token and blocks anonymous viewers after a few minutes. The app
+  gets its own signature and renews it in the background while you watch, record or cast, so streams
+  don't stop after 10 minutes. Multi-view tiles, recordings, the Android TV input and casting each get a
+  token of their own, so one never cuts another.
+- **vavoo.to ⇄ kool.to** – when one is blocked or doesn't answer, the other is used automatically.
+  Optional **Secure DNS** for providers that block the names.
+- **Player** – Media3 / ExoPlayer with FFmpeg audio built in: Dolby (AC-3, E-AC-3), DTS and MP2 play
+  even on devices that can't decode them. Automatic reconnects.
+- **Programme guide** – daily data from epgshare01.online (several days ahead, a GitHub copy as
+  fallback), matched to the channels by name rules (country prefixes, HD/HEVC tags, accents, spaces,
+  numbers) and curated channel maps.
+- **Playlist server** – other players (TiviMate, VLC, Kodi) get the channels and the guide from
+  `http://127.0.0.1:4323/playlist.m3u`; the links go through the app, which keeps the token fresh.
+
 ## Screenshots
 
-Real screenshots of version 1.3.2 (Android emulator, live channels from the Vavoo catalog).
+Real screenshots (Android emulator, live channels from the Vavoo catalog).
 
 | Main menu | Channels with the preview window (Halo theme) |
 | --- | --- |
@@ -37,6 +56,13 @@ Real screenshots of version 1.3.2 (Android emulator, live channels from the Vavo
 | ![Orbit theme](screen/theme-orbit.jpg) | ![Settings](screen/settings.jpg) |
 
 ## What's new in 1.3
+
+**1.3.4** – recordings follow a stream server that restarts its numbering; safer DLNA casting
+(service stop, several connections, time limit); picture-in-picture in the right shape for anamorphic
+streams; PIN pause never brought back after a reboot; Android TV setup counts only the channels the TV
+took; a locked channel is never cast before its PIN; smoother screens.
+
+**1.3.0 – 1.3.3**
 
 - **Programme guide for many more channels**: fresh daily guide data (several days ahead),
   smarter channel matching, a guide for the Balkans and Arabia too. Italy, the UK, Turkey,
@@ -97,9 +123,32 @@ Greek, Croatian, Albanian, Bulgarian, Arabic.
 **Reliable** – vavoo.to ⇄ kool.to switching when one is blocked, optional Secure DNS, the Vavoo
 token kept fresh while you watch or record, automatic reconnects.
 
+## Remote control
+
+| Key | In the lists | In the player |
+| --- | --- | --- |
+| OK | Preview, OK again: full screen | Infobar, OK again: channel list |
+| Hold OK | Menu with the colour keys' actions | Options |
+| UP / DOWN, CH+ / CH- | Move in the list | Next / previous channel (LEFT / RIGHT too) |
+| LEFT / RIGHT | – | In the options: previous / next value · paused live: 10 s back / forward |
+| 0-9 | Go to that channel number | Go to that channel number (OK goes at once) |
+| 0 / RECALL | – | Previous channel |
+| INFO / EPG | Programme guide of the list | Infobar on / off |
+| MENU | Menu | Options |
+| Colour keys | The actions shown at the bottom | The actions shown at the bottom |
+| Play / Pause | – | Pause live TV / play |
+| Rewind / Fast forward · Stop | – | 30 s back / forward · back to live |
+| BACK | Back | Closes the infobar first, then leaves |
+
 ## Problems?
 
-In the app: **Settings → Show Log → Share**, and send the log with a short description.
+- **A channel doesn't play** – press OK to try again; its other sources are tried by themselves.
+- **Nothing loads** – your provider may block Vavoo: turn on **Secure DNS** in the settings, or use a VPN.
+- **No sound / no Dolby** – try the **audio passthrough** setting (on with an AV receiver, off with TV speakers).
+- **Forgot the PIN** – clearing the app's data resets it (and the settings).
+
+
+Anything else: in the app **Settings → Show Log → Share**, and send the log with a short description.
 
 ## Credits & license
 
