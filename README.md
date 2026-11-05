@@ -1,6 +1,6 @@
 # Vavoo Stream – Android
 
-**Android app by Qu4k3** · ![version](https://img.shields.io/badge/version-1.3.4-8b3fd9) ![Android](https://img.shields.io/badge/Android-5.0%2B-3fdc8e) ![TV](https://img.shields.io/badge/Android%20TV-ready-5a8cff)
+**Android app by Qu4k3** · ![version](https://img.shields.io/badge/version-1.3.5-8b3fd9) ![Android](https://img.shields.io/badge/Android-5.0%2B-3fdc8e) ![TV](https://img.shields.io/badge/Android%20TV-ready-5a8cff)
 
 Live TV from Vavoo / Kool.to on your Android **phone, tablet and Android TV box** – a
 complete TV app: preview window, programme guide, recordings, pause live TV, multi-view,
@@ -20,19 +20,20 @@ add `https://github.com/pQu4k3r/vavoo_android-releases`.
 
 ## How it works
 
-- **Channels** – the app reads the Vavoo catalog (all countries, with their groups). A channel that exists
+- **Channels** – the app reads the channel list from geil.to (all countries), and from Vavoo's
+  catalog (vavoo.to, then kool.to) when geil.to is blocked or down. A channel that exists
   several times (`.b`, `.c`, `.s`, HD, HEVC, RAW, backup…) is shown as **one row**; when one source
   fails the next one is tried by itself.
-- **Token** – Vavoo gives one stream per token and blocks anonymous viewers after a few minutes. The app
-  gets its own signature and renews it in the background while you watch, record or cast, so streams
-  don't stop after 10 minutes. Multi-view tiles, recordings, the Android TV input and casting each get a
+- **Token** – geil.to's streams need none. For Vavoo's, which give one stream per token and block
+  anonymous viewers after a few minutes, the app gets its own signature and renews it in the
+  background while you watch, record or cast, so streams don't stop after 10 minutes. Multi-view tiles, recordings, the Android TV input and casting each get a
   token of their own, so one never cuts another.
-- **vavoo.to ⇄ kool.to** – when one is blocked or doesn't answer, the other is used automatically.
+- **geil.to → vavoo.to → kool.to** – when one is blocked or doesn't answer, the next is used automatically.
   Optional **Secure DNS** for providers that block the names.
 - **Player** – Media3 / ExoPlayer with FFmpeg audio built in: Dolby (AC-3, E-AC-3), DTS and MP2 play
   even on devices that can't decode them. Automatic reconnects.
 - **Programme guide** – daily data from epgshare01.online (several days ahead, a GitHub copy as
-  fallback), matched to the channels by name rules (country prefixes, HD/HEVC tags, accents, spaces,
+  fallback), matched to the channels by their guide id from geil.to, then by name rules (country prefixes, HD/HEVC tags, accents, spaces,
   numbers) and curated channel maps.
 - **Playlist server** – other players (TiviMate, VLC, Kodi) get the channels and the guide from
   `http://127.0.0.1:4323/playlist.m3u`; the links go through the app, which keeps the token fresh.
@@ -56,6 +57,11 @@ Real screenshots (Android emulator, live channels from the Vavoo catalog).
 | ![Orbit theme](screen/theme-orbit.jpg) | ![Settings](screen/settings.jpg) |
 
 ## What's new in 1.3
+
+**1.3.5** – channels now come from **geil.to** (no token needed, a guide id with each channel),
+with vavoo.to and kool.to as fallbacks; **channel logos are back** (Vavoo's old logo server had
+stopped answering); favourites, recent channels and timers carry over by themselves; geil.to in
+Settings → Server.
 
 **1.3.4** – recordings follow a stream server that restarts its numbering; safer DLNA casting
 (service stop, several connections, time limit); picture-in-picture in the right shape for anamorphic
