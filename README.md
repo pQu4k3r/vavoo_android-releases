@@ -1,6 +1,6 @@
 # Vavoo Stream – Android
 
-**Android app by Qu4k3** · ![version](https://img.shields.io/badge/version-1.3.6-8b3fd9) ![Android](https://img.shields.io/badge/Android-5.0%2B-3fdc8e) ![TV](https://img.shields.io/badge/Android%20TV-ready-5a8cff)
+**Android app by Qu4k3** · ![version](https://img.shields.io/badge/version-1.3.7-8b3fd9) ![Android](https://img.shields.io/badge/Android-5.0%2B-3fdc8e) ![TV](https://img.shields.io/badge/Android%20TV-ready-5a8cff)
 
 Live TV from Vavoo / Kool.to on your Android **phone, tablet and Android TV box** – a
 complete TV app: preview window, programme guide, recordings, pause live TV, multi-view,
@@ -57,6 +57,10 @@ Real screenshots (Android emulator, live channels from the Vavoo catalog).
 | ![Orbit theme](screen/theme-orbit.jpg) | ![Settings](screen/settings.jpg) |
 
 ## What's new in 1.3
+
+**1.3.7** – the **player's infobar with the D-pad**: with the infobar shown ◀ ▶ go along its buttons
+(Back, Fav, CH-, CH+, Options, Cast, List, Recall) and OK presses one – ▲ ▼ still change the channel;
+the bottom buttons also reachable from an empty list.
 
 **1.3.6** – **remotes without colour keys** (Fire TV, TIM Box…): DOWN at the end of a list moves onto
 the colour buttons, ◀ ▶ choose, OK presses; the update window with ◀ ▶ and OK; Favourite in the
@@ -146,7 +150,7 @@ token kept fresh while you watch or record, automatic reconnects.
 | INFO / EPG | Programme guide of the list | Infobar on / off |
 | MENU | Menu | Options |
 | Colour keys | The actions shown at the bottom | The actions shown at the bottom |
-| No colour keys? | DOWN at the end of the list: the bottom buttons, ◀ ▶ and OK | Hold OK: options (Favourite too) |
+| No colour keys? | DOWN at the end of the list: the bottom buttons, ◀ ▶ and OK | Infobar shown: ◀ ▶ along its buttons, OK · hold OK: options |
 | Play / Pause | – | Pause live TV / play |
 | Rewind / Fast forward · Stop | – | 30 s back / forward · back to live |
 | BACK | Back | Closes the infobar first, then leaves |
