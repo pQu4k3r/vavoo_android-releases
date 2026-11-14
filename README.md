@@ -1,6 +1,6 @@
 # Vavoo Stream – Android
 
-**Android app by Qu4k3** · ![version](https://img.shields.io/badge/version-1.3.7-8b3fd9) ![Android](https://img.shields.io/badge/Android-5.0%2B-3fdc8e) ![TV](https://img.shields.io/badge/Android%20TV-ready-5a8cff)
+**Android app by Qu4k3** · ![version](https://img.shields.io/badge/version-1.3.8-8b3fd9) ![Android](https://img.shields.io/badge/Android-5.0%2B-3fdc8e) ![TV](https://img.shields.io/badge/Android%20TV-ready-5a8cff)
 
 Live TV from Vavoo / Kool.to on your Android **phone, tablet and Android TV box** – a
 complete TV app: preview window, programme guide, recordings, pause live TV, multi-view,
@@ -57,6 +57,10 @@ Real screenshots (Android emulator, live channels from the Vavoo catalog).
 | ![Orbit theme](screen/theme-orbit.jpg) | ![Settings](screen/settings.jpg) |
 
 ## What's new in 1.3
+
+**1.3.8** – reliability: recently watched channels and the last channel follow a change of site,
+the guide reads again for a new channel list, one reload when a site is down, casting keeps its
+stream alive after the app restarts; remote fixes (BACK under a popup, no stuck highlight).
 
 **1.3.7** – the **player's infobar with the D-pad**: with the infobar shown ◀ ▶ go along its buttons
 (Back, Fav, CH-, CH+, Options, Cast, List, Recall) and OK presses one – ▲ ▼ still change the channel;
